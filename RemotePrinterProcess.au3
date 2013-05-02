@@ -47,8 +47,8 @@ Func PrintFile($spool, $file)
    EndIf
    Local $printer = Setting($spool, $type)
    If Not $printer Then
-	  Debug('ERROR: printer config missing: '&$spool&' '&$file)
-	  Return False
+	  Debug('NOTICE: printer config missing: '&$spool&' '&$file)
+	  ;Return False
    EndIf
    Switch $type
 	  Case 'pdf'
@@ -118,7 +118,7 @@ Func PrintImage($printer, $file)
    Local $script=Setting('RemotePrinter', 'irfanview')
    Local $params='"' & @ScriptDir & '\data\' & $file & '" /print="' & $printer & '"'
    Debug('PrintImage: ' & $script & ' ' & $params)
-   ShellExecuteWait($script, $params, @SW_HIDE)
+   ShellExecute($script, $params, @SW_HIDE)
 EndFunc
 
 ; get the spools
@@ -144,6 +144,9 @@ EndFunc
 ; downloads a file from a url
 Func UrlDownload($spool, $url, $file)
    Debug('UrlDownload: '&$spool&' '&$url&' '&$file)
+   If DirGetSize(@ScriptDir & '\data') = -1 Then
+	  DirCreate(@ScriptDir & '\data')
+   EndIf
    InetGet($url, @ScriptDir & '\data\' & $file)
 EndFunc
 
@@ -163,5 +166,8 @@ Func Debug($message)
 	  Return
    EndIf
    ConsoleWrite($message & @CRLF)
+   If DirGetSize(@ScriptDir & '\log') = -1 Then
+	  DirCreate(@ScriptDir & '\log')
+   EndIf
    FileWriteLine(@ScriptDir & '\log\' & @YEAR & '-' & @MON & '-' & @MDAY & '.txt', _NowCalc() & ' - ' & $message)
 EndFunc
