@@ -1,13 +1,15 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_UseX64=n
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
+
 #include <Date.au3>
 
 ; kill other instances
-If WinExists('RemotePrinterMonitor') Then
-	WinKill('RemotePrinterMonitor')
+Local $title = Setting('RemotePrinter', 'title')
+If WinExists($title  & 'Monitor') Then
+	WinKill($title  & 'Monitor')
 EndIf
-AutoItWinSetTitle('RemotePrinterMonitor')
+AutoItWinSetTitle($title  & 'Monitor')
 
 ; endless loop
 While 1
@@ -33,18 +35,23 @@ EndFunc
 
 ; restart print process
 Func Restart()
-   WinKill('RemotePrinterProcess')
+   WinKill($title & 'Process')
    Run(@ScriptDir & '\RemotePrinterProcess.exe')
 EndFunc
 
 ; check if print process is running
 Func RemotePrinterExists()
-   If WinExists('RemotePrinterProcess') Then
+   If WinExists($title & 'Process') Then
 	  Return True
    EndIf
    Sleep(10000)
-   If WinExists('RemotePrinterProcess') Then
+   If WinExists($title & 'Process') Then
 	  Return True
    EndIf
    Return False
+EndFunc
+
+; get a setting
+Func Setting($section, $key)
+   return IniRead(@ScriptDir&'\RemotePrinter.ini', $section, $key, '')
 EndFunc
