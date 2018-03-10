@@ -1,2 +1,6 @@
-log
-data
+RemotePrinter.exe
+RemotePrinterProcess.exe
+RemotePrinterSetup.exe
+RemotePrinterSetup.html
+log/*
+data/*
