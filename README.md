@@ -17,8 +17,8 @@ Copy the entire folder to a windows PC.
 Install the following:
 
 * [autoit-v3-setup.exe](https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe)
-* [DYMO_Label_v.8_SDK_Installer.exe](http://download.dymo.com/Software/Win/DLS8Setup.8.5.0.exe)
-* [DLS8Setup.8.5.3.exe](https://bitbucket.org/afibranding/console/downloads/DLS8Setup.8.5.3.exe)
+* [DYMO_Label_v.8_SDK_Installer.exe](http://www.labelwriter.com/software/dls/win/DYMO_Label_v.8_SDK_Installer.exe)
+* [DLS8Setup.8.5.3.exe](http://download.dymo.com/Software/Win/DLS8Setup.8.5.0.exe)
 * [Adobe Reader](http://get.adobe.com/reader/)
 * [IrfanView](http://www.irfanview.com/)
 * [PrintHTML](http://www.printhtml.com/)
