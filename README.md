@@ -3,9 +3,11 @@
 
 ## About
 
-Remote Printer is developed using [AutoIt](https://www.autoitscript.com/).
+Remote Printer allows a Windows PC to poll and download assets from a web spool and then send them to a local or network printer.
 
-The site offers a code editor and compiler.
+This allows the web application to simply write files into a folder, which will then be printed.
+
+The software was developed using [AutoIt](https://www.autoitscript.com/), which offers a free code editor and compiler.
 
 
 ## Installation
@@ -14,12 +16,12 @@ Copy the entire folder to a windows PC.
 
 Install the following:
 
-* [autoit-v3-setup-v3.3.14.2.exe](https://bitbucket.org/afibranding/console/downloads/autoit-v3-setup-v3.3.14.2.exe)
-* [DYMO_Label_v.8_SDK_Installer.exe](https://bitbucket.org/afibranding/console/downloads/DYMO_Label_v.8_SDK_Installer.exe)
+* [autoit-v3-setup.exe](https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe)
+* [DYMO_Label_v.8_SDK_Installer.exe](http://download.dymo.com/Software/Win/DLS8Setup.8.5.0.exe)
 * [DLS8Setup.8.5.3.exe](https://bitbucket.org/afibranding/console/downloads/DLS8Setup.8.5.3.exe)
 * [Adobe Reader](http://get.adobe.com/reader/)
 * [IrfanView](http://www.irfanview.com/)
-* [PrintHTML](http://http://www.printhtml.com/)
+* [PrintHTML](http://www.printhtml.com/)
 
 Alter `RemotePrinter.ini` to suit.
 
