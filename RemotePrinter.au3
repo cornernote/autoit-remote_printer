@@ -1,5 +1,6 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_UseX64=n
+#AutoIt3Wrapper_Icon=RemotePrinter.ico
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 
 #include <Date.au3>

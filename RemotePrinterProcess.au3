@@ -1,5 +1,6 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_UseX64=n
+#AutoIt3Wrapper_Icon=RemotePrinterProcess.ico
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 
 #include <Date.au3>
@@ -59,7 +60,7 @@ Func PrintFile($spool, $file)
 	  Debug('NOTICE: printer config missing: '&$spool&' '&$file)
 	  ;Return False
    EndIf
-   Switch $type
+   Switch $fileType
 	  Case 'pdf'
 		 PrintPdf($printer, $file)
 	  Case 'label'
@@ -192,7 +193,11 @@ EndFunc
 
 ; cleanup any windows that are left open
 Func CleanupWindows()
-   WinKill('Adobe Acrobat Reader DC')
+   Local $titles[2] = ['Adobe Acrobat Reader DC', 'Start - Foxit Reader']
+   For $title In $titles
+      WinClose($title)
+      WinKill($title)
+   Next
 EndFunc
 
 ; get a setting
